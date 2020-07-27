@@ -5,15 +5,25 @@ const nemo = ['nemo'];
 const everyone = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank'];
 const large = new Array(100).fill('nemo');  // Runtime increases along with the amount of items
 
-function findNemo2(fish) {
-  let t0 = performance.now();   // Browser built-in feature
+function findNemo(fish) {
   for (let i = 0; i < fish.length; i++) {
     if (fish[i] === 'nemo') {
       console.log('Found NEMO!');
     }
   }
-  let t1 = performance.now();
-  console.log("Call to find Nemo took " + (t1 - t0) + " milliseconds.");
 }
 
-findNemo2(everyone)
+function logFirstFish(fishes) {
+  console.log(fishes[0])
+}
+
+
+function logFirstTwoFishes(fishes) {
+  console.log(fishes[0])  // O(1)
+  console.log(fishes[1])  // O(1)
+}
+
+findNemo(large)  // O(n) --> Linear Time
+logFirstFish(fish)  // O(1) --> Constant Time
+logFirstTwoFishes(fish)  // O(1) --> Constant Time
+
