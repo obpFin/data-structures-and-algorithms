@@ -43,3 +43,19 @@ def log_all_pairs_of_array(arr):
             print(i, j)
 
 log_all_pairs_of_array(boxes)
+
+# Find 1st, find Nth...
+arr = [
+  {
+    "tweet": 'hi',
+    "date": 2012,
+  },
+  {
+    "tweet": 'my',
+    "date": 2018,
+  },
+  {
+    "tweet": 'teddy',
+    "date": 2018,
+  },
+]  # O(n^2)
