@@ -4,7 +4,6 @@ function funChallenge(input) {
   a = 50 + 3; // O(1)
 
   for (let i = 0; i < input.length; i++) {
-    // O(n)
     anotherFunction(); // O(n)
     let stranger = true; // O(n)
     a++; // O(n)
@@ -46,7 +45,7 @@ function log_all_pairs_of_array(arr) {
 
 log_all_pairs_of_array(boxes);
 
-// BIG O(n * n) --> O(n^2)  (Quadratic time)
+// BIG O(n * n) --> O(n^2) (Quadratic time)
 
 // Find 1st, find Nth...
 const arr = [
