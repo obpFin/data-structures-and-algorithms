@@ -47,3 +47,19 @@ function log_all_pairs_of_array(arr) {
 log_all_pairs_of_array(boxes);
 
 // BIG O(n * n) --> O(n^2)  (Quadratic time)
+
+// Find 1st, find Nth...
+const arr = [
+  {
+    tweet: 'hi',
+    date: 2012,
+  },
+  {
+    tweet: 'my',
+    date: 2018,
+  },
+  {
+    tweet: 'teddy',
+    date: 2018,
+  },
+];  // O(n^2)
