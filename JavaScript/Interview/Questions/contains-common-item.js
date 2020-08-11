@@ -16,23 +16,41 @@ const array4 = ['z', 'y', 'x'];
 // return true/false
 
 // Brute force solution:
-// Compare the values with nested loops - O(n^2)
+
+// Compare the values with nested loops
+// O(n^2) - Time complexity
+// O(1) - Space complexity
 
 // Optimised solution:
-// array1 => obj {
-//  a: true;
-//  b: true;
-//  c: true;
-//  x: true;
-// }
-// array2[index] === obj.properties
 
 function containsCommonItem(arr1, arr2) {
   // 1. loop through first array and create object where 
   // properties === items in the array
-
+  // Can we assume always 2 params?
+  // This should be modularised
+  let map = {}
+  for (let i=0; i<arr1.length; i++) {
+    if (!map[arr1[i]]) {
+      const item = arr1[i]
+      map[item] = true
+    }
+  }
   // 2. loop through second array and check if item in second
   // array exists on created object.
-
-  // - O(a+b)
+  for (let j=0; j<arr2.length; j++) {
+    if (map[arr2[j]]) {
+      return true
+    }
+  }
+  return false
+  // O(a+b) - Time complexity
+  // O(a) - Space complexity 
 }
+console.log(containsCommonItem(array3, array4))
+
+// Readable solution:
+
+function containsCommonItem2(arr1, arr2) {
+  return arr1.some(item => arr2.includes(item))
+}
+console.log(containsCommonItem2(array3, array4))
