@@ -9,10 +9,10 @@ const strings = ['a', 'b', 'c', 'd']
 // Access
 strings[2]  // O(1)
 
-// push
+// insert
 strings.push('e') // O(1)
 
-// pop
+// delete
 strings.pop() // O(1)
 
 // unshift

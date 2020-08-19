@@ -9,10 +9,10 @@ strings = ['a', 'b', 'c', 'd']
 # Access
 strings[2]  # O(1)
 
-# push
+# insert
 strings.append('e') # O(1)
 
-# pop
+# delete
 strings.pop(0) # O(1)
 
 # slice
