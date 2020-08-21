@@ -3,7 +3,7 @@ class HashTable {
     this.data = new Array(size)
   }
 
-  _hash(key) {
+  _hash(key) {    // Very fast, usually O(1)
     let hash = 0
     for (let i=0; i < key.length; i++){
         hash = (hash + key.charCodeAt(i) * i) % this.data.length
@@ -11,7 +11,7 @@ class HashTable {
     return hash
   }
 
-  set(key, value) {
+  set(key, value) {   // O(1)
     let address = this._hash(key)
 
     // if address space is not free, create linked list
@@ -22,7 +22,7 @@ class HashTable {
     return this.data
   }
 
-  get(key){
+  get(key){   // O(1) - O(n) if memory collision
     const address = this._hash(key)
     const currentBucket = this.data[address]
     if (currentBucket) {
@@ -35,7 +35,7 @@ class HashTable {
     return undefined
   }
   
-  keys(){
+  keys(){   // O(n) slow!
     const keysArray = []
     console.log(this.data)
     for (let i=0; i<this.data.length; i++){

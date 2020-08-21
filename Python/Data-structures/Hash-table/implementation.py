@@ -1,4 +1,4 @@
-# Partly ripped from https://raw.githubusercontent.com/theja-m/Data-Structures-and-Algorithms/master/Data%20Structures%20-%20Hashtables/Hash%20Table%20Implementation.py
+# Partly ripped from https:#raw.githubusercontent.com/theja-m/Data-Structures-and-Algorithms/master/Data%20Structures%20-%20Hashtables/Hash%20Table%20Implementation.py
 
 
 class Hashtable:
@@ -18,10 +18,10 @@ class Hashtable:
     def __str__(self):
         return str(self.__dict__)
 
-    def hash(self, key):
+    def hash(self, key):    # Very fast, usually O(1)
         return len(key) % self.bucket
 
-    def put(self, key, value):
+    def put(self, key, value):  # O(1)
         """
         value may already be present
         """
@@ -34,7 +34,7 @@ class Hashtable:
         reference.append([key, value])
         return None
 
-    def get(self, key):
+    def get(self, key):     # O(1) - O(n) if memory collision
         """
         Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
         """
@@ -45,7 +45,7 @@ class Hashtable:
                 return reference[i][1]
         return -1
 
-    def remove(self, key):
+    def remove(self, key):     # O(1)
         """
         Removes the mapping of the specified value key if this map contains a mapping for the key
         """
@@ -57,7 +57,7 @@ class Hashtable:
                 return None
         return None
 
-    def keys(self):
+    def keys(self):     # O(n) slow!
         """
         Get key values of the hashtable
         """
