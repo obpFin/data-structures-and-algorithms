@@ -61,10 +61,11 @@ class DoublyLinkedList {
 
   remove(index) {   // O(n)
     // checks for index
-    const leader = this.lookup(index-1)
-    const unwantedNode = leader.next
-    leader.next = unwantedNode.next
-    unwantedNode.prev = leader
+    const leader = self.traversetoindex(index-1)
+    const unwanted_node = leader.next
+    const holder = unwanted_node.next
+    leader.next = holder
+    holder.prev = leader
     this.length--
     return this
   }
