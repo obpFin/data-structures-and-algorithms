@@ -96,19 +96,17 @@ class LinkedList {
   }
 
   reverse2() {
-    let currentHead = this.head.next;
-    let reversedList = this.head;
-    reversedList.next = null;
+    let previous = null;
+    let current = this.head;
 
-    while (currentHead) {
-      let temp = currentHead;
-      currentHead = currentHead.next;
-
-      temp.next = reversedList;
-      reversedList = temp;
+    while (current) {
+      let next = current.next;
+      current.next = previous;
+			previous = current;
+			current = next;
     }
-
-    return reversedList
+    this.head = previous;
+    return this.head
   }
 
   printAsList() {
@@ -128,6 +126,6 @@ myLinkedList.append(1)
 myLinkedList.prepend(16)
 myLinkedList.insert(2, 99)
 myLinkedList.remove(1)
-// console.log(myLinkedList.printAsList())
+console.log(myLinkedList.printAsList())
 // console.log('1', myLinkedList.reverse().printAsList())
 console.log('2', myLinkedList.reverse2())
