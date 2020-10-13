@@ -122,7 +122,7 @@ class Device {
     const power = linkStation.calcPower(distance)
     if (power === 0) {
       return console.log(
-        `No available link stations for point ${this.point.toString()}`
+        `No link station within reach for point ${this.point.toString()}`
       )
     }
     return console.log(
