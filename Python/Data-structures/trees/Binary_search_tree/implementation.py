@@ -19,19 +19,29 @@ class BinarySearchTree():
         while True:
             if value < currentNode['value']:
                 # Left
-                if not currentNode.left:
-                    currentNode.left = newNode
+                if not currentNode['left']:
+                    currentNode['left'] = newNode
                     return self
-                currentNode = currentNode.left
+                currentNode = currentNode['left']
             else:
                 # Right
-                if not currentNode.right:
-                    currentNode.right = newNode
+                if not currentNode['right']:
+                    currentNode['right'] = newNode
                     return self
-                currentNode = currentNode.right
+                currentNode = currentNode['right']
 
     def lookup(self, value):
-        return None
+        if not self.root:
+            return False
+        currentNode = self.root
+        while currentNode is not None:
+            if value < currentNode['value']:
+                currentNode = currentNode['left']
+            elif value > currentNode['value']:
+                currentNode = currentNode['right']
+            elif currentNode['value'] == value:
+                return currentNode
+        return False
 
 
 tree = BinarySearchTree()
