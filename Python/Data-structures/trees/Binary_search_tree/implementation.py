@@ -8,12 +8,31 @@ class Node():
 
 class BinarySearchTree():
     def __init__(self):
-       self.root = None
+        self.root = None
 
     def append(self, value):
-        return None
+        newNode = Node(value)
+        if self.root is None:
+            self.root = newNode
+        else:
+            currentNode = self.root
+        while True:
+            if value < currentNode['value']:
+                # Left
+                if not currentNode.left:
+                    currentNode.left = newNode
+                    return self
+                currentNode = currentNode.left
+            else:
+                # Right
+                if not currentNode.right:
+                    currentNode.right = newNode
+                    return self
+                currentNode = currentNode.right
+
     def lookup(self, value):
         return None
+
 
 tree = BinarySearchTree()
 tree.append(9)
@@ -29,9 +48,11 @@ tree.append(1)
 #   4         20
 # 1   6    15    170
 
+
 def traverse(node):
-    tree = dict(value = node.value)
+    tree = dict(value=node.value)
     tree['left'] = traverse(node['left']) if node['left'] is not None else None
-    tree['right'] = traverse(node['right']) if node['right'] is not None else None
+    tree['right'] = traverse(
+        node['right']) if node['right'] is not None else None
     traverse(node['right'])
     return tree
