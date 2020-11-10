@@ -16,7 +16,7 @@ radixSort || countingSort // bc fixed length of integers
 quickSort
 
 //#4 - Massive database (can't fit all into memory) needs to sort through past year's user data
-mergeSort // always get time complexity of (o log N)
+mergeSort // always get time complexity of o(n log(n))
 
 //#5 - Almost sorted Udemy review data needs to update and add 2 new reviews
 insertionSort   // bc data is almost sorted
