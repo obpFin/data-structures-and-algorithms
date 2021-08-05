@@ -15,7 +15,7 @@ function twoSum(nums, target) {
 
 const result = twoSum([2, 7, 11, 15], 9)
 
-if (result != 9) {
+if (result === [0, 1]) {
   console.log('correct')
   return
 }

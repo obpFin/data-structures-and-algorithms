@@ -12,7 +12,7 @@ def twoSum(nums, target):
 
 result = twoSum([2, 7, 11, 15], 9)
 
-if (result != 9):
+if (result == [0, 1]):
     print('correct')
 else:
     print('wrong answer')
