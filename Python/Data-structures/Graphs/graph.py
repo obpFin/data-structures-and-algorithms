@@ -27,3 +27,23 @@ graph = [
 
 #        2   0
 #     1    3
+
+# Questions:
+
+# If you know a solution is not far from the root of the tree:
+# Use BFS: Starts searching the closest nodes to the parent first
+
+# If the tree is very deep and solutions are rare:
+# Use BFS: DFS will take long time
+
+# If the tree is very wide:
+# Use DFS: bfs will need too much memory
+
+# If solutions are frequent but located deep in the tree:
+# Use DFS: get answer quicker, hopefully
+
+# Determining whether a path exists between two nodes:
+# Use DFS: that's what it's built for
+
+# Finding the shortest path:
+# Use BFS
