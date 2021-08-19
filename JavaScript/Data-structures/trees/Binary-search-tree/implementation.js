@@ -165,6 +165,48 @@ class BinarySearchTree {
     }
     return this.breadthFirstSearchRecursive(queue, list)
   }
+  depthFirstSearchInOrder() {
+    return traverseInOrder(this.root, [])
+  }
+  depthFirstSearchPostOrder() {
+    return traversePostOrder(this.root, [])
+  }
+  depthFirstSearchPreOrder() {
+    return traversePreOrder(this.root, [])
+  }
+}
+
+function traverseInOrder(node, list) {
+  if (node.left) {
+    traverseInOrder(node.left, list)
+  }
+  list.push(node.value)
+  if (node.right) {
+    traverseInOrder(node.right, list)
+  }
+  return list
+}
+
+function traversePreOrder(node, list) {
+  list.push(node.value)
+  if (node.left) {
+    traversePreOrder(node.left, list)
+  }
+  if (node.right) {
+    traversePreOrder(node.right, list)
+  }
+  return list
+}
+
+function traversePostOrder(node, list) {
+  if (node.left) {
+    traversePostOrder(node.left, list)
+  }
+  if (node.right) {
+    traversePostOrder(node.right, list)
+  }
+  list.push(node.value)
+  return list
 }
 
 const tree = new BinarySearchTree()
@@ -175,7 +217,9 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-console.log(tree.breadthFirstSearchRecursive([tree.root], []))
+console.log('In order ', tree.depthFirstSearchInOrder())
+console.log('Pre order ', tree.depthFirstSearchPreOrder())
+console.log('Post order', tree.depthFirstSearchPostOrder())
 
 // console.log(JSON.stringify(traverse(tree.root)))
 
