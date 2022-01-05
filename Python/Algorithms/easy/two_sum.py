@@ -3,6 +3,8 @@
 # You can return the answer in any order.
 
 # brute force
+# O(n^2) time | O(1) space
+
 def twoSum(nums, target):
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
@@ -16,3 +18,16 @@ if (result == [0, 1]):
     print('correct')
 else:
     print('wrong answer')
+
+# Optimised
+# O(n) time | O(n) space
+def twoSum(array, targetSum):
+	nums = {}
+
+	for num in array:
+		potentialMatch = targetSum - num
+		if potentialMatch in nums:
+			return [targetSum - num, num]
+		else:
+			nums[num] = True
+	return []
