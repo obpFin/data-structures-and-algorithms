@@ -21,13 +21,26 @@ else:
 
 # Optimised
 # O(n) time | O(n) space
-def twoSum(array, targetSum):
-	nums = {}
 
-	for num in array:
-		potentialMatch = targetSum - num
-		if potentialMatch in nums:
-			return [targetSum - num, num]
-		else:
-			nums[num] = True
-	return []
+
+def twoSum(array, targetSum):
+    nums = {}
+
+    for num in array:
+        potentialMatch = targetSum - num
+        if potentialMatch in nums:
+            return [targetSum - num, num]
+        else:
+            nums[num] = True
+    return []
+
+# Leetcode style: indexes instead of sum
+
+
+class Solution:
+    def twoSum(self, nums, target):
+        d = {}
+        for i, v in enumerate(nums):
+            if (target-v) in d.keys():
+                return [i, d[target-v]]
+            d[v] = i
